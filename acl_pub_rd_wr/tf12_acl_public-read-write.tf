@@ -8,7 +8,11 @@ provider "aws" {
 
 resource "aws_s3_bucket" "log_bucket" {
   bucket = "my-tf-log-bucket"
-  acl = "log-delivery-write"
+  acl    = "log-delivery-write"
+  tags = {
+    h    = "h"
+    test = "default"
+  }
 }
 resource "aws_s3_bucket" "foo" {
   acl = "public-read-write"
@@ -20,5 +24,9 @@ resource "aws_s3_bucket" "foo" {
   logging {
     target_bucket = aws_s3_bucket.log_bucket.id
     target_prefix = "log/"
+  }
+  tags = {
+    h    = "h"
+    test = "default"
   }
 }

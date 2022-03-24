@@ -34,6 +34,10 @@ Resources:
       Tags:
         - Key: application-asset-insight-id
           Value: AssetId
+        - Key: test
+          Value: default
+        - Key: h
+          Value: h
       VersioningConfiguration:
         Status: Enabled
   SourceBucketPolicy:
